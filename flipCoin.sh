@@ -21,5 +21,5 @@ if [ $head -gt $tail ]
 	else 	
 	diff=$(($tail-$head))
 	echo "Tail has won by $diff points"
-	fi
+fi
 
