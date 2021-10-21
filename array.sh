@@ -23,9 +23,40 @@ echo "Fourth Value ==> ${dict[val4]}"
 array=("${dict[val1]}", "${dict[val2]}", "${dict[val3]}","${dict[val4]}")
 
 #Printing in Ascending order
-array=( $(printf "%s\n" ${array[@]} | sort -n ))
-echo "Descending order ==> ${array[*]}"
+for (( i = 0; i < 3; i++ ))
+do
+   for (( j = $i; j < 3; j++ ))
+   do
+      if [ ${array[$i]} > ${array[$j]}  ]; then
+       temp=${array[$i]}
+       array[$i]=${array[$j]}
+       array[$j]=$temp
+      fi
+   done
+done
+
+echo -e "\nSorted Numbers in Ascending Order:"
+for (( i=0; i < 3; i++ )) 
+do
+  echo ${array[$i]}
+done
+
 
 #Printing in Descending order
-array=( $(printf "%s\n" ${array[@]} | sort -nr ))
-echo "Ascending order ==> ${array[*]}"
+for (( i = 0; i < 3; i++ ))
+do
+   for (( j = $i; j < 3; j++ ))
+   do
+      if [ ${array[$i]} < ${array[$j]}  ]; then
+       temp1=${array[$i]}
+       array[$i]=${array[$j]}
+       array[$j]=$temp1
+      fi
+   done
+done
+
+echo -e "\nSorted Numbers in Descending Order:"
+for (( i=0; i < 3; i++ )) 
+do
+  echo ${array[$i]}
+done
