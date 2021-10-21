@@ -1,2 +1,2 @@
-# Bridgelab_Bootcamp
-echo "This is repository for Bridgelabz BootCamp"
+Bridgelab_Bootcamp
+This is repository for Bridgelabz BootCamp
